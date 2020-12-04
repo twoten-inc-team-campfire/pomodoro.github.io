@@ -232,7 +232,166 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_DataService.js.html">services/DataService.js</a>, <a href="services_DataService.js.html#line180">line 180</a>
+        <a href="services_DefaultDataService.js.html">services/DefaultDataService.js</a>, <a href="services_DefaultDataService.js.html#line93">line 93</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    If rejected, it contains an error.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="clearHistoryWithStore"><span class="type-signature"></span>clearHistoryWithStore<span class="signature">(store)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Clear data in the given object store in database IndexedDB.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>store</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Store</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The store where history will be cleared</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="services_BasicDataService.js.html">services/BasicDataService.js</a>, <a href="services_BasicDataService.js.html#line199">line 199</a>
     </li></ul></dd>
     
 
@@ -343,7 +502,7 @@ circular clockface.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_Timer_ClockFace.js.html">components/Timer/ClockFace.js</a>, <a href="components_Timer_ClockFace.js.html#line8">line 8</a>
+        <a href="components_Timer_ClockFace.js.html">components/Timer/ClockFace.js</a>, <a href="components_Timer_ClockFace.js.html#line9">line 9</a>
     </li></ul></dd>
     
 
@@ -387,7 +546,7 @@ circular clockface.
 
 
 <div class="description">
-    Load all pomodoro settings
+    Load all pomodoro settings from the default pomodoroSettingsStore.
 </div>
 
 
@@ -431,7 +590,167 @@ circular clockface.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_DataService.js.html">services/DataService.js</a>, <a href="services_DataService.js.html#line109">line 109</a>
+        <a href="services_DefaultDataService.js.html">services/DefaultDataService.js</a>, <a href="services_DefaultDataService.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Promise fulfilled by the mapping object from tag to the PomodoroSettings.
+                   If rejected, it contains an error.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;object></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="loadAllPomodoroSettingsWithStore"><span class="type-signature"></span>loadAllPomodoroSettingsWithStore<span class="signature">(store)</span><span class="type-signature"> &rarr; {Promise.&lt;object>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Load all pomodoro settings from the given store
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>store</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Store</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The store where pomodoro settings will be loaded.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="services_BasicDataService.js.html">services/BasicDataService.js</a>, <a href="services_BasicDataService.js.html#line116">line 116</a>
     </li></ul></dd>
     
 
@@ -498,7 +817,7 @@ circular clockface.
 
 
 <div class="description">
-    Load timer sessions of a specific range of dates.
+    Load timer sessions of a specific range of dates from the default timerSessionStore.
 </div>
 
 
@@ -681,7 +1000,292 @@ circular clockface.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_DataService.js.html">services/DataService.js</a>, <a href="services_DataService.js.html#line54">line 54</a>
+        <a href="services_DefaultDataService.js.html">services/DefaultDataService.js</a>, <a href="services_DefaultDataService.js.html#line38">line 38</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Promise fulfilled by the array of the TimerSession.
+                                   If rejected, it contains an error.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;<a href="TimerSession.html">TimerSession</a>>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="loadTimerSessionListByDateWithStore"><span class="type-signature"></span>loadTimerSessionListByDateWithStore<span class="signature">(startDate, endDate, store, types<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="TimerSession.html">TimerSession</a>>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Load timer sessions of a specific range of dates from the given store.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>startDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The start date of the query.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The end date of the query.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>store</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Store</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The store where timer sessions will be loaded.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>types</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    [TIMER_SESSION_TYPE.POMODORO, TIMER_SESSION_TYPE.SHORT_REST ,TIMER_SESSION_TYPE.LONG_REST]
+                
+                </td>
+            
+
+            <td class="description last">The list of timer session types to query</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="services_BasicDataService.js.html">services/BasicDataService.js</a>, <a href="services_BasicDataService.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -748,7 +1352,7 @@ circular clockface.
 
 
 <div class="description">
-    Load the UI settings
+    Load the UI settings from the default uiSettingsStore.
 </div>
 
 
@@ -792,7 +1396,167 @@ circular clockface.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_DataService.js.html">services/DataService.js</a>, <a href="services_DataService.js.html#line160">line 160</a>
+        <a href="services_DefaultDataService.js.html">services/DefaultDataService.js</a>, <a href="services_DefaultDataService.js.html#line83">line 83</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Promise fulfilled by the saved UI settings.
+                   If rejected when no previous settings saved, it contains an error.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;<a href="UISettings.html">UISettings</a>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="loadUISettingsWithStore"><span class="type-signature"></span>loadUISettingsWithStore<span class="signature">(store)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="UISettings.html">UISettings</a>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Load the UI settings from the given store.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>store</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Store</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The store where UI settings will be loaded.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="services_BasicDataService.js.html">services/BasicDataService.js</a>, <a href="services_BasicDataService.js.html#line175">line 175</a>
     </li></ul></dd>
     
 
@@ -859,7 +1623,7 @@ circular clockface.
 
 
 <div class="description">
-    Save the pomodoro settings.
+    Save the pomodoro settings in the default pomodoroSettingsStore.
 </div>
 
 
@@ -975,7 +1739,212 @@ circular clockface.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_DataService.js.html">services/DataService.js</a>, <a href="services_DataService.js.html#line92">line 92</a>
+        <a href="services_DefaultDataService.js.html">services/DefaultDataService.js</a>, <a href="services_DefaultDataService.js.html#line50">line 50</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    If rejected, it contains an error.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="savePomodoroSettingsWithStore"><span class="type-signature"></span>savePomodoroSettingsWithStore<span class="signature">(tag, settings, store)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Save the pomodoro settings in the given store.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The tag of the pomodoro settings to be saved</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>settings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="PomodoroSettings.html">PomodoroSettings</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The pomodoro settings to be saved</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>store</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Store</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The store where pomodoro settings will be saved.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="services_BasicDataService.js.html">services/BasicDataService.js</a>, <a href="services_BasicDataService.js.html#line95">line 95</a>
     </li></ul></dd>
     
 
@@ -1041,7 +2010,7 @@ circular clockface.
 
 
 <div class="description">
-    Save the timer session.
+    Save the timer session in default timerSessionStore.
 </div>
 
 
@@ -1134,7 +2103,189 @@ circular clockface.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_DataService.js.html">services/DataService.js</a>, <a href="services_DataService.js.html#line21">line 21</a>
+        <a href="services_DefaultDataService.js.html">services/DefaultDataService.js</a>, <a href="services_DefaultDataService.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    If rejected, it contains an error.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="saveTimerSessionWithStore"><span class="type-signature"></span>saveTimerSessionWithStore<span class="signature">(session, store)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Save the timer session in the give store.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>session</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="TimerSession.html">TimerSession</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The session to be saved</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>store</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Store</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The store where the session will be saved.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="services_BasicDataService.js.html">services/BasicDataService.js</a>, <a href="services_BasicDataService.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -1200,7 +2351,7 @@ circular clockface.
 
 
 <div class="description">
-    Save the UI settings.
+    Save the UI settings in the default uiSettingsStore.
 </div>
 
 
@@ -1252,7 +2403,7 @@ circular clockface.
 
             
 
-            <td class="description last">The UI settings to be saved</td>
+            <td class="description last">The UI settings to be saved.</td>
         </tr>
 
     
@@ -1293,7 +2444,7 @@ circular clockface.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_DataService.js.html">services/DataService.js</a>, <a href="services_DataService.js.html#line142">line 142</a>
+        <a href="services_DefaultDataService.js.html">services/DefaultDataService.js</a>, <a href="services_DefaultDataService.js.html#line72">line 72</a>
     </li></ul></dd>
     
 
@@ -1351,7 +2502,7 @@ circular clockface.
     
 
     
-    <h4 class="name" id="TaskSelector"><span class="type-signature"></span>TaskSelector<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="saveUISettingsWithStore"><span class="type-signature"></span>saveUISettingsWithStore<span class="signature">(settings, store)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
     
 
     
@@ -1359,8 +2510,7 @@ circular clockface.
 
 
 <div class="description">
-    Component that allows users to enter a task for the current
-pomodoro session.
+    Save the UI settings in the given store.
 </div>
 
 
@@ -1369,6 +2519,78 @@ pomodoro session.
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>settings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="UISettings.html">UISettings</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The UI settings to be saved.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>store</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Store</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The store where UI settings will be saved.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -1404,7 +2626,7 @@ pomodoro session.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_Timer_TaskSelector.js.html">components/Timer/TaskSelector.js</a>, <a href="components_Timer_TaskSelector.js.html#line18">line 18</a>
+        <a href="services_BasicDataService.js.html">services/BasicDataService.js</a>, <a href="services_BasicDataService.js.html#line153">line 153</a>
     </li></ul></dd>
     
 
@@ -1429,6 +2651,28 @@ pomodoro session.
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    If rejected, it contains an error.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1543,8 +2787,7 @@ pomodoro session.
 
 
 <div class="description">
-    Allows users to start, pause, and cancel the current pomodoro
-session.
+    TimerButtons
 </div>
 
 
@@ -1588,7 +2831,7 @@ session.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_Timer_TimerButtons.js.html">components/Timer/TimerButtons.js</a>, <a href="components_Timer_TimerButtons.js.html#line14">line 14</a>
+        <a href="components_Timer_TimerButtons.js.html">components/Timer/TimerButtons.js</a>, <a href="components_Timer_TimerButtons.js.html#line9">line 9</a>
     </li></ul></dd>
     
 
@@ -1634,13 +2877,13 @@ session.
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="PomodoroManager.html">PomodoroManager</a></li><li><a href="PomodoroSettings.html">PomodoroSettings</a></li><li><a href="TimerSession.html">TimerSession</a></li><li><a href="UISettings.html">UISettings</a></li><li><a href="UserSettings.html">UserSettings</a></li></ul><h3>Interfaces</h3><ul><li><a href="TimerInterface.html">TimerInterface</a></li></ul><h3>Global</h3><ul><li><a href="global.html#clearAllHistory">clearAllHistory</a></li><li><a href="global.html#ClockFace">ClockFace</a></li><li><a href="global.html#loadAllPomodoroSettings">loadAllPomodoroSettings</a></li><li><a href="global.html#loadTimerSessionListByDate">loadTimerSessionListByDate</a></li><li><a href="global.html#loadUISettings">loadUISettings</a></li><li><a href="global.html#savePomodoroSettings">savePomodoroSettings</a></li><li><a href="global.html#saveTimerSession">saveTimerSession</a></li><li><a href="global.html#saveUISettings">saveUISettings</a></li><li><a href="global.html#TaskSelector">TaskSelector</a></li><li><a href="global.html#Timer">Timer</a></li><li><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></li><li><a href="global.html#TimerButtons">TimerButtons</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="PomodoroManager.html">PomodoroManager</a></li><li><a href="PomodoroSettings.html">PomodoroSettings</a></li><li><a href="TimerSession.html">TimerSession</a></li><li><a href="UISettings.html">UISettings</a></li><li><a href="UserSettings.html">UserSettings</a></li></ul><h3>Interfaces</h3><ul><li><a href="TimerInterface.html">TimerInterface</a></li></ul><h3>Global</h3><ul><li><a href="global.html#clearAllHistory">clearAllHistory</a></li><li><a href="global.html#clearHistoryWithStore">clearHistoryWithStore</a></li><li><a href="global.html#ClockFace">ClockFace</a></li><li><a href="global.html#loadAllPomodoroSettings">loadAllPomodoroSettings</a></li><li><a href="global.html#loadAllPomodoroSettingsWithStore">loadAllPomodoroSettingsWithStore</a></li><li><a href="global.html#loadTimerSessionListByDate">loadTimerSessionListByDate</a></li><li><a href="global.html#loadTimerSessionListByDateWithStore">loadTimerSessionListByDateWithStore</a></li><li><a href="global.html#loadUISettings">loadUISettings</a></li><li><a href="global.html#loadUISettingsWithStore">loadUISettingsWithStore</a></li><li><a href="global.html#savePomodoroSettings">savePomodoroSettings</a></li><li><a href="global.html#savePomodoroSettingsWithStore">savePomodoroSettingsWithStore</a></li><li><a href="global.html#saveTimerSession">saveTimerSession</a></li><li><a href="global.html#saveTimerSessionWithStore">saveTimerSessionWithStore</a></li><li><a href="global.html#saveUISettings">saveUISettings</a></li><li><a href="global.html#saveUISettingsWithStore">saveUISettingsWithStore</a></li><li><a href="global.html#Timer">Timer</a></li><li><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></li><li><a href="global.html#TimerButtons">TimerButtons</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Dec 03 2020 20:21:04 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Dec 04 2020 07:24:43 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
