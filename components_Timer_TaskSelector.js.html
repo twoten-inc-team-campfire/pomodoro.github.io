@@ -36,7 +36,6 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import CreateIcon from '@material-ui/icons/Create';
 import CloseIcon from '@material-ui/icons/Close';
-import {useSettingsGlobalState} from '../../GlobalState/GlobalStateHooks';
 
 
 /**
@@ -45,7 +44,6 @@ import {useSettingsGlobalState} from '../../GlobalState/GlobalStateHooks';
  * pomodoro session.
  */
 function TaskSelector() {
-    const { settings } = useSettingsGlobalState();
     const [showSelector, setShowSelector] = useState(true);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [task, setTask] = useState(null);
@@ -95,54 +93,48 @@ function TaskSelector() {
     }
   
     return ( 
-        &lt;div className="task-outline">
-            { settings.taskSelection &amp;&amp;
-                &lt;div className="task-box">
-                    &lt;span>
-                        { showSelector &amp;&amp;
-                            &lt;IconButton aria-label="selector-button" onClick={handleToggle} >
-                                &lt;CreateIcon style={{ fontSize: '35px', color: '#015384' }} />
-                            &lt;/IconButton>
-                        }
-
-                        &lt;span id="taskName" data-testid="taskDescription"> { task || 'No Task Selected' } &lt;/span>
-
-                        &lt;br/>
-
-                        { !showSelector &amp;&amp;
-                            &lt;IconButton id="clear-button" data-testid="clearButton" onClick={handleClearTask} >
-                                &lt;CloseIcon style={{ fontSize: '35px', color: '#015384' }} />
-                            &lt;/IconButton>
-                        }
-
-                        &lt;Dialog id="dialog" open={isDialogOpen} >
-                            &lt;DialogContent>
-                                &lt;form>
-                                    &lt;TextField 
-                                        id="outlined-basic" 
-                                        label="Task name" 
-                                        multiline
-                                        rowsMax={3}
-                                        onChange={e => handleChange(e)}
-                                        data-testid="taskTextArea"
-                                        margin="normal" />
-                                &lt;/form>
-                            &lt;/DialogContent>
-
-                            &lt;DialogActions>
-                                &lt;Button id="cancel-button" variant="contained" onClick={handleCancel} > 
-                                    Cancel
-                                &lt;/Button>
-                                { task &amp;&amp;
-                                    &lt;Button id="confirm-button" variant="contained" onClick={handleSubmit} > 
-                                        Confirm 
-                                    &lt;/Button>
-                                }
-                            &lt;/DialogActions>
-                        &lt;/Dialog>
-                    &lt;/span>
-                &lt;/div>
+        &lt;div className="task-box">
+            { showSelector &amp;&amp;
+                &lt;IconButton aria-label="selector-button" onClick={handleToggle} >
+                    &lt;CreateIcon style={{ fontSize: '35px', color: '#015384' }} />
+                &lt;/IconButton>
             }
+
+            &lt;span id="taskName" data-testid="taskDescription"> { task || 'No Task Selected' } &lt;/span>
+
+            &lt;br/>
+
+            { !showSelector &amp;&amp;
+                &lt;IconButton id="clear-button" data-testid="clearButton" onClick={handleClearTask} >
+                    &lt;CloseIcon style={{ fontSize: '35px', color: '#015384' }} />
+                &lt;/IconButton>
+            }
+
+            &lt;Dialog id="dialog" open={isDialogOpen} >
+                &lt;DialogContent>
+                    &lt;form>
+                        &lt;TextField 
+                            id="outlined-basic" 
+                            label="Task name" 
+                            multiline
+                            rowsMax={3}
+                            onChange={e => handleChange(e)}
+                            data-testid="taskTextArea"
+                            margin="normal" />
+                    &lt;/form>
+                &lt;/DialogContent>
+
+                &lt;DialogActions>
+                    &lt;Button id="cancel-button" variant="contained" onClick={handleCancel} > 
+                        Cancel
+                    &lt;/Button>
+                    { task &amp;&amp;
+                        &lt;Button id="confirm-button" variant="contained" onClick={handleSubmit} > 
+                            Confirm 
+                        &lt;/Button>
+                    }
+                &lt;/DialogActions>
+            &lt;/Dialog>
         &lt;/div>
     )
 }
@@ -157,13 +149,13 @@ export default TaskSelector;</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="PomodoroManager.html">PomodoroManager</a></li><li><a href="PomodoroSettings.html">PomodoroSettings</a></li><li><a href="TimerSession.html">TimerSession</a></li><li><a href="UISettings.html">UISettings</a></li><li><a href="UserSettings.html">UserSettings</a></li></ul><h3>Interfaces</h3><ul><li><a href="TimerInterface.html">TimerInterface</a></li></ul><h3>Global</h3><ul><li><a href="global.html#clearAllHistory">clearAllHistory</a></li><li><a href="global.html#clearHistoryWithStore">clearHistoryWithStore</a></li><li><a href="global.html#ClockFace">ClockFace</a></li><li><a href="global.html#loadTimerSessionListByDate">loadTimerSessionListByDate</a></li><li><a href="global.html#loadTimerSessionListByDateWithStore">loadTimerSessionListByDateWithStore</a></li><li><a href="global.html#loadUserSettings">loadUserSettings</a></li><li><a href="global.html#loadUserSettingsWithStore">loadUserSettingsWithStore</a></li><li><a href="global.html#saveTimerSession">saveTimerSession</a></li><li><a href="global.html#saveTimerSessionWithStore">saveTimerSessionWithStore</a></li><li><a href="global.html#saveUserSettings">saveUserSettings</a></li><li><a href="global.html#saveUserSettingsWithStore">saveUserSettingsWithStore</a></li><li><a href="global.html#TaskSelector">TaskSelector</a></li><li><a href="global.html#textPrimary">textPrimary</a></li><li><a href="global.html#Timer">Timer</a></li><li><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></li><li><a href="global.html#TimerButtons">TimerButtons</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="PomodoroSettings.html">PomodoroSettings</a></li><li><a href="TimerSession.html">TimerSession</a></li><li><a href="UISettings.html">UISettings</a></li><li><a href="UserSettings.html">UserSettings</a></li></ul><h3>Global</h3><ul><li><a href="global.html#clearAllHistory">clearAllHistory</a></li><li><a href="global.html#clearHistoryWithStore">clearHistoryWithStore</a></li><li><a href="global.html#ClockFace">ClockFace</a></li><li><a href="global.html#loadTimerSessionListByDate">loadTimerSessionListByDate</a></li><li><a href="global.html#loadTimerSessionListByDateWithStore">loadTimerSessionListByDateWithStore</a></li><li><a href="global.html#loadUserSettings">loadUserSettings</a></li><li><a href="global.html#loadUserSettingsWithStore">loadUserSettingsWithStore</a></li><li><a href="global.html#PomodoroManager">PomodoroManager</a></li><li><a href="global.html#saveTimerSession">saveTimerSession</a></li><li><a href="global.html#saveTimerSessionWithStore">saveTimerSessionWithStore</a></li><li><a href="global.html#saveUserSettings">saveUserSettings</a></li><li><a href="global.html#saveUserSettingsWithStore">saveUserSettingsWithStore</a></li><li><a href="global.html#TaskSelector">TaskSelector</a></li><li><a href="global.html#textPrimary">textPrimary</a></li><li><a href="global.html#Timer">Timer</a></li><li><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></li><li><a href="global.html#TimerButtons">TimerButtons</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Dec 11 2020 21:06:53 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Dec 14 2020 01:04:33 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
