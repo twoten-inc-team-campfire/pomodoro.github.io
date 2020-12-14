@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: TimerSession</title>
+    <title>JSDoc: Class: PomodoroManager</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: TimerSession</h1>
+    <h1 class="page-title">Class: PomodoroManager</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>TimerSession<span class="signature">(startTime, endTime, type, task)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>PomodoroManager<span class="signature">(props)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">TimerSession</div>
+            <div class="class-description">PomodoroManager</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="TimerSession"><span class="type-signature"></span>new TimerSession<span class="signature">(startTime, endTime, type, task)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="PomodoroManager"><span class="type-signature"></span>new PomodoroManager<span class="signature">(props)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Create a TimerSession.
+    PomodoroManager that encapsulates the pomodoro logic applied to a timer object.
 </div>
 
 
@@ -79,7 +79,47 @@
         
 
         
-        <th>Default</th>
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>props</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Props passed to component.
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
         
 
         <th class="last">Description</th>
@@ -91,13 +131,13 @@
 
         <tr>
             
-                <td class="name"><code>startTime</code></td>
+                <td class="name"><code>Timer</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Date</span>
+<span class="param-type"><a href="TimerInterface.html">TimerInterface</a></span>
 
 
             
@@ -106,25 +146,22 @@
             
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last">The time the work session started</td>
+            <td class="description last">The React Component timer to be rendered. It should support the
+TimerInterface interface.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>endTime</code></td>
+                <td class="name"><code>UserSettings</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Date</span>
+<span class="param-type"><a href="UserSettings.html">UserSettings</a></span>
 
 
             
@@ -133,25 +170,21 @@
             
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last">The time the work session ended</td>
+            <td class="description last">The user's settings</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>onNewTimerSession</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></span>
+<span class="param-type">onNewTimerSession</span>
 
 
             
@@ -160,41 +193,15 @@
             
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last">The type of session, a TIMER_SESSION_TYPE enum</td>
+            <td class="description last">Callback to pass a new TimerSession to the parent</td>
         </tr>
 
     
+    </tbody>
+</table>
 
-        <tr>
-            
-                <td class="name"><code>task</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
             </td>
-
-            
-
-            
-                <td class="default">
-                
-                    null
-                
-                </td>
-            
-
-            <td class="description last">The title of the task as a string</td>
         </tr>
 
     
@@ -235,7 +242,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line15">line 15</a>
+        <a href="parts_PomodoroManager.js.html">parts/PomodoroManager.js</a>, <a href="parts_PomodoroManager.js.html#line26">line 26</a>
     </li></ul></dd>
     
 
@@ -281,298 +288,6 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="endTime"><span class="type-signature"></span>endTime<span class="type-signature"> :Date</span></h4>
-
-
-
-
-<div class="description">
-    The time the work session ended
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Date</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line23">line 23</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="startTime"><span class="type-signature"></span>startTime<span class="type-signature"> :Date</span></h4>
-
-
-
-
-<div class="description">
-    The time the work session started
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Date</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line20">line 20</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="task"><span class="type-signature"></span>task<span class="type-signature"> :string</span></h4>
-
-
-
-
-<div class="description">
-    The title of the task as a string
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line29">line 29</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="type"><span class="type-signature"></span>type<span class="type-signature"> :<a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></span></h4>
-
-
-
-
-<div class="description">
-    The type of session, a TIMER_SESSION_TYPE enum
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line26">line 26</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -583,7 +298,7 @@
     
 
     
-    <h4 class="name" id="getDuration"><span class="type-signature"></span>getDuration<span class="signature">()</span><span class="type-signature"> &rarr; {number}</span></h4>
+    <h4 class="name" id="pause"><span class="type-signature"></span>pause<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -591,7 +306,8 @@
 
 
 <div class="description">
-    Get the duration that the TimerSession lasted.
+    Public function to pause the PomodoroManager
+This should return a TimerSession to the parent for the time elapsed.
 </div>
 
 
@@ -635,7 +351,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line40">line 40</a>
+        <a href="parts_PomodoroManager.js.html">parts/PomodoroManager.js</a>, <a href="parts_PomodoroManager.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -660,28 +376,273 @@
 
 
 
-<h5>Returns:</h5>
+
+
+
+
 
         
-<div class="param-desc">
-    The duration of the TimerSession.
+            
+
+    
+
+    
+    <h4 class="name" id="reset"><span class="type-signature"></span>reset<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Public function to reset the timer back to the beginning of the current cycle.
+This should not return a TimerSession to the parent.
 </div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
 
 
-    </dd>
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="parts_PomodoroManager.js.html">parts/PomodoroManager.js</a>, <a href="parts_PomodoroManager.js.html#line52">line 52</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
 </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
     
+
+    
+    <h4 class="name" id="skip"><span class="type-signature"></span>skip<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Public function to skip to the end of the current part of the cycle.
+This should return a TimeSession for the duration the timer ran.
+If the timer has not started running, return nothing.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="parts_PomodoroManager.js.html">parts/PomodoroManager.js</a>, <a href="parts_PomodoroManager.js.html#line62">line 62</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="start"><span class="type-signature"></span>start<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Public function to start/resume the PomodoroManager
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="parts_PomodoroManager.js.html">parts/PomodoroManager.js</a>, <a href="parts_PomodoroManager.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -690,6 +651,147 @@
         
     
 
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+
+    
+
+    
+    <h4 class="name" id=".onNewTimerSession"><span class="type-signature"></span>onNewTimerSession<span class="signature">(newTimerSession)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Callback to pass a new TimerSession to the parent.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>newTimerSession</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="TimerSession.html">TimerSession</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">New TimerSession the PomodoroManager just created</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="parts_PomodoroManager.js.html">parts/PomodoroManager.js</a>, <a href="parts_PomodoroManager.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
     
 
     
