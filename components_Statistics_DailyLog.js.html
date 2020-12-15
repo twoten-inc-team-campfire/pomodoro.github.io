@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: services/DefaultDataService.js</title>
+    <title>JSDoc: Source: components/Statistics/DailyLog.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: services/DefaultDataService.js</h1>
+    <h1 class="page-title">Source: components/Statistics/DailyLog.js</h1>
 
     
 
@@ -26,86 +26,73 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { Store } from 'idb-keyval';
-import { 
-    saveTimerSessionWithStore,
-    loadTimerSessionListByDateWithStore,
-    saveUserSettingsWithStore,
-    loadUserSettingsWithStore,
-    clearHistoryWithStore,
- } from './BasicDataService';
-import { TIMER_SESSION_TYPE } from '../classes/TimerSession';
-
-let timerSessionStore = new Store('IndexedDB', 'TimerSessionStore');
-let userSettingsStore = new Store('IndexedDB', 'UserSettingsStore');
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import {DailyLogSession} from "./DailyLogSession";
 
 /**
- * saveTimerSession
- * @desc Save the timer session in default timerSessionStore.
- * @param {TimerSession} session - The session to be saved
- * @returns {Promise}  If rejected, it contains an error.
- * @public
+ * @typedef {TimerSession} DailyLog#TimerCycle
+ * @desc A compressed sequence of TimerSessions of the same type; contains additional info about all the tasks
+ * completed during that timer cycle and the amount of time the timer was paused.
+ * @property {string[]} tasks - All tasks that were undertaken during the timer cycle
+ * @property {number} pauseTime - The length of time the timer was paused during a part of the cycle in milliseconds.
+ * @ignore
  */
-function saveTimerSession(session) {
-    return saveTimerSessionWithStore(session, timerSessionStore);
+
+/**
+ * breakTimerSessionsIntoSeparateBlocks
+ * @desc Breaks an ordered sequence of TimerSessions into blocks of consecutive TimerSessions
+ * @param {TimerSession[]} timerSessions - The TimerSessions to be split up
+ * @param {number} maxGap - The maximum allowable gap in minutes between two TimerSessions before they're split into separate blocks.
+ * @returns {TimerSession[][]}
+ */
+export function breakTimerSessionsIntoSeparateBlocks(timerSessions, maxGap) {
+    let blocks = [];
+    maxGap = maxGap * 60 * 1000;
+    if (timerSessions.length > 0) {
+        let currentBlock = [timerSessions[0]];
+        for (let i = 1; i &lt; timerSessions.length; i += 1) {
+            if (timerSessions[i].startTime.getTime() -
+                currentBlock[currentBlock.length - 1].endTime.getTime() >= maxGap) {
+                blocks.push(currentBlock);
+                currentBlock = [timerSessions[i]];
+            } else {
+                currentBlock.push(timerSessions[i]);
+            }
+        }
+        blocks.push(currentBlock);
+    }
+    return blocks;
 }
 
 /**
- * loadTimerSessionListByDate
- * @desc Load timer sessions of a specific range of dates from the default timerSessionStore.
- * @param {Date} startDate - The start date of the query.
- * @param {Date} endDate - The end date of the query.
- * @param {Array} [types=[TIMER_SESSION_TYPE.POMODORO, TIMER_SESSION_TYPE.SHORT_REST ,TIMER_SESSION_TYPE.LONG_REST]] - The list of timer session types to query
- * @returns {Promise&lt;TimerSession[]>} Promise fulfilled by the array of the TimerSession.
- *                                    If rejected, it contains an error.
- * @public
+ * DailyLog
+ * @desc Displays a log of the TimerSessions for a specific day, showing information about groups of consecutive
+ * TimerSessions: time started, total amount of work done, tasks that were worked on, etc.
+ * @param {TimerSessions[]} timerSessions - The TimerSessions recorded on the date passed in as an argument.
+ * @param {number} maxGap - The permitted time gap between consecutive TimerSessions before they're split into separate
+ * segments (in minutes).
+ * @returns {JSX.Element}
+ * @constructor
  */
-function loadTimerSessionListByDate(startDate, endDate, types = Object.values(TIMER_SESSION_TYPE)) {
-    return loadTimerSessionListByDateWithStore(startDate, endDate, timerSessionStore, types);
-}
-
-/**
- * saveUserSettings
- * @desc Save the user settings in the default userSettingsStore.
- * @param {UserSettings} settings - The user settings to be saved.
- * @returns {Promise}  If rejected, it contains an error.
- * @public
- */
-function saveUserSettings(settings) {
-    return saveUserSettingsWithStore(settings, userSettingsStore);
-}
-
-/**
- * loadUserSettings
- * @desc Load the user settings from the default userSettingsStore.
- * @returns {Promise&lt;UserSettings>} Promise fulfilled by the saved user settings.
- *                    If rejected when no previous settings saved, it contains an error.
- * @public
- */
-function loadUserSettings() {
-    return loadUserSettingsWithStore(userSettingsStore);
-}
-
-/**
- * clearAllHistory
- * @desc Clear all timer sessions and user settings in database.
- * @returns {Promise} If rejected, it contains an error.
- * @public
- */
-function clearAllHistory() {
-    return Promise.all(
-        [
-            clearHistoryWithStore(timerSessionStore),
-            clearHistoryWithStore(userSettingsStore)
-        ]);
-}
-
-export {
-    saveTimerSession,
-    loadTimerSessionListByDate,
-    saveUserSettings,
-    loadUserSettings,
-    clearAllHistory,
+export function DailyLog({timerSessions, maxGap = 20}) {
+    let items = []
+    if (timerSessions.length > 0) {
+        timerSessions = [...timerSessions];
+        let blocks = breakTimerSessionsIntoSeparateBlocks(timerSessions, maxGap);
+        items = blocks.map((session, index) => (
+            &lt;div key={index} style={{"marginTop": "0.5em", "marginBottom": "0.5em"}}>
+                &lt;DailyLogSession timerSessions={session}/>
+            &lt;/div>
+        ));
+    }
+    return (
+        &lt;div
+            style={{"display": "flex", "flexDirection": "column", "justifyContent": "center"}}
+            aria-label={"Timer sessions log"}
+        >
+            {items}
+        &lt;/div>
+    )
 }</code></pre>
         </article>
     </section>

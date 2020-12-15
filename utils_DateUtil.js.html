@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: services/DefaultDataService.js</title>
+    <title>JSDoc: Source: utils/DateUtil.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: services/DefaultDataService.js</h1>
+    <h1 class="page-title">Source: utils/DateUtil.js</h1>
 
     
 
@@ -26,86 +26,75 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { Store } from 'idb-keyval';
-import { 
-    saveTimerSessionWithStore,
-    loadTimerSessionListByDateWithStore,
-    saveUserSettingsWithStore,
-    loadUserSettingsWithStore,
-    clearHistoryWithStore,
- } from './BasicDataService';
-import { TIMER_SESSION_TYPE } from '../classes/TimerSession';
-
-let timerSessionStore = new Store('IndexedDB', 'TimerSessionStore');
-let userSettingsStore = new Store('IndexedDB', 'UserSettingsStore');
-
-/**
- * saveTimerSession
- * @desc Save the timer session in default timerSessionStore.
- * @param {TimerSession} session - The session to be saved
- * @returns {Promise}  If rejected, it contains an error.
- * @public
+            <pre class="prettyprint source linenums"><code>/**
+ * getDateMinutes
+ * @desc Returns the formatted minute (mm) for a given date.
+ * @param {Date} date - Returns the formatted minute from this date.
+ * @example
+ * // returns 06
+ * date.setHours(3, 6, 5, 0)
+ * getDateHour(date);
+ * @returns {string}
  */
-function saveTimerSession(session) {
-    return saveTimerSessionWithStore(session, timerSessionStore);
+export function getDateMinutes(date) {
+    let minute = date.getMinutes().toString();
+    minute = minute.padStart(2, "0");
+    return minute;
 }
 
 /**
- * loadTimerSessionListByDate
- * @desc Load timer sessions of a specific range of dates from the default timerSessionStore.
- * @param {Date} startDate - The start date of the query.
- * @param {Date} endDate - The end date of the query.
- * @param {Array} [types=[TIMER_SESSION_TYPE.POMODORO, TIMER_SESSION_TYPE.SHORT_REST ,TIMER_SESSION_TYPE.LONG_REST]] - The list of timer session types to query
- * @returns {Promise&lt;TimerSession[]>} Promise fulfilled by the array of the TimerSession.
- *                                    If rejected, it contains an error.
- * @public
+ * getDateHour
+ * @desc Returns the formatted hour (hh) for a given date.
+ * @param {Date} date - Returns the formatted hour from this date.
+ * @example
+ * // returns 03
+ * date.setHours(3, 6, 5, 0)
+ * getDateHour(date);
+ * @returns {string}
  */
-function loadTimerSessionListByDate(startDate, endDate, types = Object.values(TIMER_SESSION_TYPE)) {
-    return loadTimerSessionListByDateWithStore(startDate, endDate, timerSessionStore, types);
+export function getDateHours(date) {
+    let hour = date.getHours().toString();
+    hour = hour.padStart(2, "0");
+    return hour;
 }
 
 /**
- * saveUserSettings
- * @desc Save the user settings in the default userSettingsStore.
- * @param {UserSettings} settings - The user settings to be saved.
- * @returns {Promise}  If rejected, it contains an error.
- * @public
+ * shiftDate
+ * @desc Shifts a given Date object by the number of days given in the offset.
+ * @param {Date} date - The date to be shifted.
+ * @param {number} offset - The number of days to shift the date forward or backward.
+ * @returns {Date}
+ * @ignore
  */
-function saveUserSettings(settings) {
-    return saveUserSettingsWithStore(settings, userSettingsStore);
+export function shiftDate(date, offset) {
+    let shiftedDate = new Date(date);
+    shiftedDate.setDate(date.getDate() + offset);
+    return shiftedDate;
 }
 
 /**
- * loadUserSettings
- * @desc Load the user settings from the default userSettingsStore.
- * @returns {Promise&lt;UserSettings>} Promise fulfilled by the saved user settings.
- *                    If rejected when no previous settings saved, it contains an error.
- * @public
+ * dateToHtmlDateSting
+ * @desc Outputs a string representing a date in a format compatible with HTML input elements that work with dates.
+ * @param {Date} date - The date to be converted to a string for use in an HTML date input field.
+ * @returns {string}
  */
-function loadUserSettings() {
-    return loadUserSettingsWithStore(userSettingsStore);
+export function dateToHtmlDateString(date) {
+    // HTML expects the day and month to be exactly 2 characters long and the year to be exactly 4 characters long.
+    const year = date.getFullYear().toString().padStart(4, "0");
+    const month = (date.getMonth() + 1).toString().padStart(2, "0"); // JS indexes months 0 - 11, so we must increment.
+    const day = date.getDate().toString().padStart(2, "0");
+    return `${year}-${month}-${day}`;
 }
 
 /**
- * clearAllHistory
- * @desc Clear all timer sessions and user settings in database.
- * @returns {Promise} If rejected, it contains an error.
- * @public
+ * htmlDateStringToDate
+ * @desc Reads a date string in the format used by an HTML date input and outputs the corresponding JS Date object.
+ * @param {string} str - The string representing a date that we want to convert into a Date object.
+ * @returns {Date}
  */
-function clearAllHistory() {
-    return Promise.all(
-        [
-            clearHistoryWithStore(timerSessionStore),
-            clearHistoryWithStore(userSettingsStore)
-        ]);
-}
-
-export {
-    saveTimerSession,
-    loadTimerSessionListByDate,
-    saveUserSettings,
-    loadUserSettings,
-    clearAllHistory,
+export function htmlDateStringToDate(str) {
+    let substrs = str.split('-');
+    return new Date(parseInt(substrs[0]), parseInt(substrs[1])-1, parseInt(substrs[2]), 0, 0, 0, 0);
 }</code></pre>
         </article>
     </section>
