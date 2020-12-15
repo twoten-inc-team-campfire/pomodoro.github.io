@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: classes/settings/UserSettings.js</title>
+    <title>JSDoc: Source: components/Statistics/DateNavigator.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: classes/settings/UserSettings.js</h1>
+    <h1 class="page-title">Source: components/Statistics/DateNavigator.js</h1>
 
     
 
@@ -26,33 +26,60 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import {PomodoroSettings} from "./PomodoroSettings";
-import {UISettings} from "./UISettings";
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
+import IconButton from '@material-ui/core/IconButton';
+import {dateToHtmlDateString, htmlDateStringToDate, shiftDate} from "../../utils/DateUtil";
+
 
 /**
- * UserSettings
- * @desc Contains user's current settings for the application. Container for other settings objects.
+ * Callback to pass the newly selected date to the parent.
+ * @callback onDateChange
+ * @param {Date} oldDate - The old date being overwritten
+ * @param {Date} newDate - The new date that was just selected
+ * @memberOf DateNavigator
  */
-export class UserSettings {
-    /**
-     * Create a UserSettings object.
-     * @constructs
-     * @param {PomodoroSettings} pomodoro - The settings for the pomodoro timer
-     * @param {UISettings} ui - The settings for the UI
-     */
-    constructor() {
-        /**
-         * @member {PomodoroSettings} UserSettings#pomodoro
-         * @desc The settings for the pomodoro timer
-         */
-        this.pomodoro = new PomodoroSettings();
-        /**
-         * @member {UISettings} UserSettings#ui
-         * @desc The settings for the UI
-         */
-        this.ui = new UISettings();
-    }
-}</code></pre>
+/**
+ * DateNavigator
+ * @desc Allows the user to select the date for which they want to view stats.
+ * @param {Date} date - The current date being displayed
+ * @param {onDateChange} onDateChange - The callback to be called whenever the date changes.
+ * @param {Date} maxDate - The latest date the user is allowed to navigate to
+ */
+function DateNavigator({date, onDateChange, maxDate = new Date()}) {
+    return (
+        &lt;div style={{"display": "flex", "alignItems": "center", "justifyContent": "center"}}
+            aria-label={"Date selector"}
+        >
+            &lt;IconButton
+                name={"Decrease"}
+                aria-label={"Decrease date"}
+                onClick={() => onDateChange(date, shiftDate(date,-1))}
+            >
+                &lt;ArrowLeftIcon/>
+            &lt;/IconButton>
+            &lt;input type="date"
+                   name={"Date input"}
+                   aria-label={"Date input"}
+                   value={dateToHtmlDateString(date)}
+                   style={{border: "none"}}
+                   onChange={(ev) => onDateChange(date, htmlDateStringToDate(ev.target.value))}
+                   max={dateToHtmlDateString(maxDate)}
+            />
+            &lt;IconButton
+                name={"Increase"}
+                aria-label={"Increase date"}
+                onClick={() => onDateChange(date, shiftDate(date,1))}
+                disabled={dateToHtmlDateString(date) === dateToHtmlDateString(maxDate)}
+            >
+                &lt;ArrowRightIcon/>
+            &lt;/IconButton>
+        &lt;/div>
+    )
+}
+
+export default DateNavigator;</code></pre>
         </article>
     </section>
 

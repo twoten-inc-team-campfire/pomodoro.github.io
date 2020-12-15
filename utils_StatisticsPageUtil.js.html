@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: classes/settings/UserSettings.js</title>
+    <title>JSDoc: Source: utils/StatisticsPageUtil.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: classes/settings/UserSettings.js</h1>
+    <h1 class="page-title">Source: utils/StatisticsPageUtil.js</h1>
 
     
 
@@ -26,32 +26,41 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import {PomodoroSettings} from "./PomodoroSettings";
-import {UISettings} from "./UISettings";
-
-/**
- * UserSettings
- * @desc Contains user's current settings for the application. Container for other settings objects.
+            <pre class="prettyprint source linenums"><code>/**
+ * fitTimerSessionsInRange
+ * @desc Takes a list of TimerSessions and strips it down to only TimerSessions that fit within the range,
+ *  splitting
+ * @param {TimerSession[]} timerSessions - A list of non-overlapping TimerSessions sorted by startTime
+ * @param {Date} startDate - The earliest allowed date/time in the range
+ * @param {Date} endDate - The latest allowed date/time in the range
+ * @returns {TimerSession[]}
  */
-export class UserSettings {
-    /**
-     * Create a UserSettings object.
-     * @constructs
-     * @param {PomodoroSettings} pomodoro - The settings for the pomodoro timer
-     * @param {UISettings} ui - The settings for the UI
-     */
-    constructor() {
-        /**
-         * @member {PomodoroSettings} UserSettings#pomodoro
-         * @desc The settings for the pomodoro timer
-         */
-        this.pomodoro = new PomodoroSettings();
-        /**
-         * @member {UISettings} UserSettings#ui
-         * @desc The settings for the UI
-         */
-        this.ui = new UISettings();
+export function fitTimerSessionsIntoRange(timerSessions, startDate, endDate) {
+    let trimmedTimerSessions = [];
+    let i = 0
+    while (i &lt; timerSessions.length &amp;&amp; timerSessions[i].endTime &lt; startDate) {
+        i += 1
     }
+    if (i === timerSessions.length) {
+        return [];
+    } else if (timerSessions[i].startTime &lt; startDate) {
+        let trimmedSession = timerSessions[i].copy();
+        trimmedSession.startTime = new Date(startDate);
+        trimmedTimerSessions.push(trimmedSession);
+    } else {
+        trimmedTimerSessions.push(timerSessions[i]);
+    }
+    i += 1
+    while (i &lt; timerSessions.length &amp;&amp; timerSessions[i].startTime &lt; endDate) {
+        trimmedTimerSessions.push(timerSessions[i]);
+        i += 1;
+    }
+    if (trimmedTimerSessions[trimmedTimerSessions.length - 1].endTime > endDate) {
+        let trimmedSession = trimmedTimerSessions[trimmedTimerSessions.length - 1].copy();
+        trimmedSession.endTime = new Date(endDate);
+        trimmedTimerSessions[trimmedTimerSessions.length - 1] = trimmedSession;
+    }
+    return trimmedTimerSessions;
 }</code></pre>
         </article>
     </section>
