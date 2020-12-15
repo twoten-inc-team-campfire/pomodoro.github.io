@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: UserSettings</title>
+    <title>JSDoc: Class: UISettings</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: UserSettings</h1>
+    <h1 class="page-title">Class: UISettings</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>UserSettings<span class="signature">(pomodoro, ui)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>UISettings<span class="signature">(displayPauseButton, displayCancelButton, displayFastForwardButton, displayTaskSelector)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">UserSettings</div>
+            <div class="class-description">UISettings</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="UserSettings"><span class="type-signature"></span>new UserSettings<span class="signature">(pomodoro, ui)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="UISettings"><span class="type-signature"></span>new UISettings<span class="signature">(displayPauseButton, displayCancelButton, displayFastForwardButton, displayTaskSelector)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Create a UserSettings object.
+    Create a new UISettings object.
 </div>
 
 
@@ -79,6 +79,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -89,13 +91,13 @@
 
         <tr>
             
-                <td class="name"><code>pomodoro</code></td>
+                <td class="name"><code>displayPauseButton</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="PomodoroSettings.html">PomodoroSettings</a></span>
+<span class="param-type">boolean</span>
 
 
             
@@ -104,21 +106,27 @@
             
 
             
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
 
-            <td class="description last">The settings for the pomodoro timer</td>
+            <td class="description last">Whether to display the pause button on the home screen.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>ui</code></td>
+                <td class="name"><code>displayCancelButton</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="UISettings.html">UISettings</a></span>
+<span class="param-type">boolean</span>
 
 
             
@@ -127,8 +135,72 @@
             
 
             
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
 
-            <td class="description last">The settings for the UI</td>
+            <td class="description last">Whether to display the cancel button on the home screen.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>displayFastForwardButton</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">Whether to display the fast forward button on the home screen.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>displayTaskSelector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">Whether to display the task selector field on the home screen.</td>
         </tr>
 
     
@@ -169,7 +241,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line15">line 15</a>
+        <a href="classes_settings_UISettings.js.html">classes/settings/UISettings.js</a>, <a href="classes_settings_UISettings.js.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -219,13 +291,13 @@
 
         
             
-<h4 class="name" id="pomodoro"><span class="type-signature"></span>pomodoro<span class="type-signature"> :<a href="PomodoroSettings.html">PomodoroSettings</a></span></h4>
+<h4 class="name" id="displayCancelButton"><span class="type-signature"></span>displayCancelButton<span class="type-signature"> :boolean</span></h4>
 
 
 
 
 <div class="description">
-    The settings for the pomodoro timer
+    Whether to display the cancel button on the home screen.
 </div>
 
 
@@ -234,7 +306,7 @@
     <ul>
         <li>
             
-<span class="param-type"><a href="PomodoroSettings.html">PomodoroSettings</a></span>
+<span class="param-type">boolean</span>
 
 
         </li>
@@ -273,7 +345,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line16">line 16</a>
+        <a href="classes_settings_UISettings.js.html">classes/settings/UISettings.js</a>, <a href="classes_settings_UISettings.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -291,13 +363,13 @@
 
         
             
-<h4 class="name" id="ui"><span class="type-signature"></span>ui<span class="type-signature"> :<a href="UISettings.html">UISettings</a></span></h4>
+<h4 class="name" id="displayFastForwardButton"><span class="type-signature"></span>displayFastForwardButton<span class="type-signature"> :boolean</span></h4>
 
 
 
 
 <div class="description">
-    The settings for the UI
+    Whether to display the fast forward button on the home screen.
 </div>
 
 
@@ -306,7 +378,7 @@
     <ul>
         <li>
             
-<span class="param-type"><a href="UISettings.html">UISettings</a></span>
+<span class="param-type">boolean</span>
 
 
         </li>
@@ -345,7 +417,151 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line21">line 21</a>
+        <a href="classes_settings_UISettings.js.html">classes/settings/UISettings.js</a>, <a href="classes_settings_UISettings.js.html#line38">line 38</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="displayPauseButton"><span class="type-signature"></span>displayPauseButton<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+<div class="description">
+    Whether to display the pause button on the home screen.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_UISettings.js.html">classes/settings/UISettings.js</a>, <a href="classes_settings_UISettings.js.html#line28">line 28</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="displayTaskSelector"><span class="type-signature"></span>displayTaskSelector<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+<div class="description">
+    Whether to display the task selector field on the home screen.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_UISettings.js.html">classes/settings/UISettings.js</a>, <a href="classes_settings_UISettings.js.html#line43">line 43</a>
     </li></ul></dd>
     
 

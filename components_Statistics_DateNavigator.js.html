@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Timer/TimerButtons.js</title>
+    <title>JSDoc: Source: components/Statistics/DateNavigator.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Timer/TimerButtons.js</h1>
+    <h1 class="page-title">Source: components/Statistics/DateNavigator.js</h1>
 
     
 
@@ -26,82 +26,60 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React, {useState, useEffect} from 'react';
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import IconButton from '@material-ui/core/IconButton';
-import PlayIcon from '@material-ui/icons/PlayCircleFilled';
-import PauseIcon from '@material-ui/icons/PauseCircleFilled';
-import CancelIcon from '@material-ui/icons/Cancel';
-// import FastForwardIcon from '@material-ui/icons/FastForward';
+import {dateToHtmlDateString, htmlDateStringToDate, shiftDate} from "../../utils/DateUtil";
 
 
 /**
- * TimerButtons
- * @desc Allows users to start, pause, and cancel the current pomodoro
- * session.
+ * Callback to pass the newly selected date to the parent.
+ * @callback onDateChange
+ * @param {Date} oldDate - The old date being overwritten
+ * @param {Date} newDate - The new date that was just selected
+ * @memberOf DateNavigator
  */
-function TimerButtons ({showStartButton, onClickStart, onClickPause, onClickCancel}) {
-    const [showPlay, setShowPlay] = useState(true);
-
-    useEffect(() => {
-        setShowPlay(showStartButton)
-    }, [showStartButton])
-
-    /**
-     * handlePlay
-     * @desc Starts the timer and hides the play button.
-     */
-    const handlePlay = () => {
-        setShowPlay(!showPlay)
-        if (onClickStart) { onClickStart() }
-    }
-    
-    /**
-     * handlePause
-     * @desc Pauses the timer and shows the play button.
-     */
-    const handlePause = () => {
-        setShowPlay(!showPlay)
-        if (onClickPause) { onClickPause() }
-    }
-
-    /**
-     * handleCancel
-     * @desc Resets the timer and shows the play button.
-     */
-    const handleCancel = () => {
-        setShowPlay(!showPlay)
-        if (onClickPause) { onClickCancel() }
-    }
-    
+/**
+ * DateNavigator
+ * @desc Allows the user to select the date for which they want to view stats.
+ * @param {Date} date - The current date being displayed
+ * @param {onDateChange} onDateChange - The callback to be called whenever the date changes.
+ * @param {Date} maxDate - The latest date the user is allowed to navigate to
+ */
+function DateNavigator({date, onDateChange, maxDate = new Date()}) {
     return (
-        &lt;div className="timer-buttons">
-            { showPlay &amp;&amp;
-                &lt;IconButton aria-label="start-button" onClick={handlePlay} >
-                    &lt;PlayIcon style={{ fontSize: '75px', color: '#015384'}} />
-                &lt;/IconButton>
-            }
-            { !showPlay &amp;&amp; 
-                &lt;span>
-                    &lt;IconButton aria-label="pause-button" onClick={handlePause} >
-                        &lt;PauseIcon style={{ fontSize: '75px', color: '#015384' }} />
-                    &lt;/IconButton>
-                    &lt;IconButton aria-label="cancel-button" onClick={handleCancel} >
-                        &lt;CancelIcon style={{ fontSize: '75px', color: '#015384' }} />
-                    &lt;/IconButton>
-                &lt;/span>
-            }
+        &lt;div style={{"display": "flex", "alignItems": "center", "justifyContent": "center"}}
+            aria-label={"Date selector"}
+        >
+            &lt;IconButton
+                name={"Decrease"}
+                aria-label={"Decrease date"}
+                onClick={() => onDateChange(date, shiftDate(date,-1))}
+            >
+                &lt;ArrowLeftIcon/>
+            &lt;/IconButton>
+            &lt;input type="date"
+                   name={"Date input"}
+                   aria-label={"Date input"}
+                   value={dateToHtmlDateString(date)}
+                   style={{border: "none"}}
+                   onChange={(ev) => onDateChange(date, htmlDateStringToDate(ev.target.value))}
+                   max={dateToHtmlDateString(maxDate)}
+            />
+            &lt;IconButton
+                name={"Increase"}
+                aria-label={"Increase date"}
+                onClick={() => onDateChange(date, shiftDate(date,1))}
+                disabled={dateToHtmlDateString(date) === dateToHtmlDateString(maxDate)}
+            >
+                &lt;ArrowRightIcon/>
+            &lt;/IconButton>
         &lt;/div>
     )
 }
 
-// this is the fastforward button, don't need it for now.
-// { showForward &amp;&amp;
-//     &lt;IconButton aria-label="forward">
-//         &lt;FastForwardIcon style={{ fontSize: '75px', color: '#015384' }} onClick={this.alternateButtons} />
-//     &lt;/IconButton>
-// }
-
-export default TimerButtons;</code></pre>
+export default DateNavigator;</code></pre>
         </article>
     </section>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: TimerSession</title>
+    <title>JSDoc: Class: PomodoroSettings</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: TimerSession</h1>
+    <h1 class="page-title">Class: PomodoroSettings</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>TimerSession<span class="signature">(startTime, endTime, type, task<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>PomodoroSettings<span class="signature">(pomodoroLength, shortBreakLength, longBreakLength, numPomodorosInCycle, autoStartBreaks, autoStartPomodoros)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">TimerSession</div>
+            <div class="class-description">PomodoroSettings</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="TimerSession"><span class="type-signature"></span>new TimerSession<span class="signature">(startTime, endTime, type, task<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="PomodoroSettings"><span class="type-signature"></span>new PomodoroSettings<span class="signature">(pomodoroLength, shortBreakLength, longBreakLength, numPomodorosInCycle, autoStartBreaks, autoStartPomodoros)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Create a TimerSession.
+    Create a new PomodoroSettings object.
 </div>
 
 
@@ -77,8 +77,6 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
         <th>Default</th>
@@ -93,144 +91,174 @@
 
         <tr>
             
-                <td class="name"><code>startTime</code></td>
+                <td class="name"><code>pomodoroLength</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Date</span>
+<span class="param-type">number</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
                 <td class="default">
                 
+                    1500000
+                
                 </td>
             
 
-            <td class="description last">The time the work session started</td>
+            <td class="description last">Length of the pomodoro cycle in milliseconds.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>endTime</code></td>
+                <td class="name"><code>shortBreakLength</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Date</span>
+<span class="param-type">number</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
                 <td class="default">
                 
+                    300000
+                
                 </td>
             
 
-            <td class="description last">The time the work session ended</td>
+            <td class="description last">Length of the short break in milliseconds.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>longBreakLength</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></span>
+<span class="param-type">number</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
                 <td class="default">
                 
+                    900000
+                
                 </td>
             
 
-            <td class="description last">The type of session, a TIMER_SESSION_TYPE enum</td>
+            <td class="description last">Length of the long break in milliseconds.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>task</code></td>
+                <td class="name"><code>numPomodorosInCycle</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">number</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
 
+            
+                <td class="default">
                 
-
+                    4
                 
                 </td>
+            
+
+            <td class="description last">The number of pomodoros in a complete cycle (before a long break)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>autoStartBreaks</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
             
 
             
                 <td class="default">
                 
-                    null
+                    false
                 
                 </td>
             
 
-            <td class="description last">The title of the task as a string</td>
+            <td class="description last">Start breaks without user input immediately after finishing a pomodoro</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>autoStartPomodoros</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Start pomodoros without user input immediately after finishing a break.</td>
         </tr>
 
     
@@ -271,7 +299,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line15">line 15</a>
+        <a href="classes_settings_PomodoroSettings.js.html">classes/settings/PomodoroSettings.js</a>, <a href="classes_settings_PomodoroSettings.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -321,13 +349,13 @@
 
         
             
-<h4 class="name" id="endTime"><span class="type-signature"></span>endTime<span class="type-signature"> :Date</span></h4>
+<h4 class="name" id="autoStartBreaks"><span class="type-signature"></span>autoStartBreaks<span class="type-signature"> :boolean</span></h4>
 
 
 
 
 <div class="description">
-    The time the work session ended
+    Start breaks without user input immediately after finishing a pomodoro.
 </div>
 
 
@@ -336,7 +364,7 @@
     <ul>
         <li>
             
-<span class="param-type">Date</span>
+<span class="param-type">boolean</span>
 
 
         </li>
@@ -375,7 +403,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line23">line 23</a>
+        <a href="classes_settings_PomodoroSettings.js.html">classes/settings/PomodoroSettings.js</a>, <a href="classes_settings_PomodoroSettings.js.html#line54">line 54</a>
     </li></ul></dd>
     
 
@@ -393,13 +421,13 @@
 
         
             
-<h4 class="name" id="startTime"><span class="type-signature"></span>startTime<span class="type-signature"> :Date</span></h4>
+<h4 class="name" id="autoStartPomodoros"><span class="type-signature"></span>autoStartPomodoros<span class="type-signature"> :boolean</span></h4>
 
 
 
 
 <div class="description">
-    The time the work session started
+    Start pomodoros without user input immediately after finishing a break.
 </div>
 
 
@@ -408,7 +436,7 @@
     <ul>
         <li>
             
-<span class="param-type">Date</span>
+<span class="param-type">boolean</span>
 
 
         </li>
@@ -447,7 +475,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line20">line 20</a>
+        <a href="classes_settings_PomodoroSettings.js.html">classes/settings/PomodoroSettings.js</a>, <a href="classes_settings_PomodoroSettings.js.html#line59">line 59</a>
     </li></ul></dd>
     
 
@@ -465,13 +493,13 @@
 
         
             
-<h4 class="name" id="task"><span class="type-signature"></span>task<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="longBreakLength"><span class="type-signature"></span>longBreakLength<span class="type-signature"> :number</span></h4>
 
 
 
 
 <div class="description">
-    The title of the task as a string
+    Length of the long break in milliseconds.
 </div>
 
 
@@ -480,281 +508,11 @@
     <ul>
         <li>
             
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line29">line 29</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="type"><span class="type-signature"></span>type<span class="type-signature"> :<a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></span></h4>
-
-
-
-
-<div class="description">
-    The type of session, a TIMER_SESSION_TYPE enum
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line26">line 26</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id=".hydrate"><span class="type-signature">(static) </span>hydrate<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="TimerSession.html">TimerSession</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Hydrates an instantiation of TimerSession from a generic object
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>obj.startTime</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Date</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>obj.endTime</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Date</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>obj.type</code></td>
-            
-
-            <td class="type">
-            
-                
 <span class="param-type">number</span>
 
 
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>obj.task</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
+        </li>
+    </ul>
 
 
 
@@ -789,7 +547,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line83">line 83</a>
+        <a href="classes_settings_PomodoroSettings.js.html">classes/settings/PomodoroSettings.js</a>, <a href="classes_settings_PomodoroSettings.js.html#line44">line 44</a>
     </li></ul></dd>
     
 
@@ -805,259 +563,225 @@
 
 
 
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="TimerSession.html">TimerSession</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
         
             
+<h4 class="name" id="numPomodorosInCycle"><span class="type-signature"></span>numPomodorosInCycle<span class="type-signature"> :number</span></h4>
 
-    
-
-    
-    <h4 class="name" id="copy"><span class="type-signature"></span>copy<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="TimerSession.html">TimerSession</a>}</span></h4>
-    
-
-    
 
 
 
 <div class="description">
-    Returns a copy of the given TimerSession.
+    The number of pomodoros in a complete cycle (before a long break)
 </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line65">line 65</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    The copy of the current TimerSession.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="TimerSession.html">TimerSession</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <h5>Type:</h5>
+    <ul>
+        <li>
             
-
-    
-
-    
-    <h4 class="name" id="getDuration"><span class="type-signature"></span>getDuration<span class="signature">()</span><span class="type-signature"> &rarr; {number}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Get the duration that the TimerSession lasted.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_TimerSession.js.html">classes/TimerSession.js</a>, <a href="classes_TimerSession.js.html#line40">line 40</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    The duration of the TimerSession in milliseconds
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
 <span class="param-type">number</span>
 
 
-    </dd>
-</dl>
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_PomodoroSettings.js.html">classes/settings/PomodoroSettings.js</a>, <a href="classes_settings_PomodoroSettings.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
 
 
 
 
 
         
+            
+<h4 class="name" id="pomodoroLength"><span class="type-signature"></span>pomodoroLength<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Length of the pomodoro cycle in milliseconds.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_PomodoroSettings.js.html">classes/settings/PomodoroSettings.js</a>, <a href="classes_settings_PomodoroSettings.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="shortBreakLength"><span class="type-signature"></span>shortBreakLength<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Length of the short break in milliseconds.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_PomodoroSettings.js.html">classes/settings/PomodoroSettings.js</a>, <a href="classes_settings_PomodoroSettings.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
     
 
     

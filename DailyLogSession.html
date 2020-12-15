@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Timer/TimerButtons.js</title>
+    <title>JSDoc: Class: DailyLogSession</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,93 +17,204 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Timer/TimerButtons.js</h1>
+    <h1 class="page-title">Class: DailyLogSession</h1>
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>import React, {useState, useEffect} from 'react';
-import IconButton from '@material-ui/core/IconButton';
-import PlayIcon from '@material-ui/icons/PlayCircleFilled';
-import PauseIcon from '@material-ui/icons/PauseCircleFilled';
-import CancelIcon from '@material-ui/icons/Cancel';
-// import FastForwardIcon from '@material-ui/icons/FastForward';
-
-
-/**
- * TimerButtons
- * @desc Allows users to start, pause, and cancel the current pomodoro
- * session.
- */
-function TimerButtons ({showStartButton, onClickStart, onClickPause, onClickCancel}) {
-    const [showPlay, setShowPlay] = useState(true);
-
-    useEffect(() => {
-        setShowPlay(showStartButton)
-    }, [showStartButton])
-
-    /**
-     * handlePlay
-     * @desc Starts the timer and hides the play button.
-     */
-    const handlePlay = () => {
-        setShowPlay(!showPlay)
-        if (onClickStart) { onClickStart() }
-    }
+        <h2><span class="attribs"><span class="type-signature"></span></span>DailyLogSession<span class="signature">(timerSessions)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h2>
+        
     
-    /**
-     * handlePause
-     * @desc Pauses the timer and shows the play button.
-     */
-    const handlePause = () => {
-        setShowPlay(!showPlay)
-        if (onClickPause) { onClickPause() }
-    }
+</header>
 
-    /**
-     * handleCancel
-     * @desc Resets the timer and shows the play button.
-     */
-    const handleCancel = () => {
-        setShowPlay(!showPlay)
-        if (onClickPause) { onClickCancel() }
-    }
+<article>
+    <div class="container-overview">
     
-    return (
-        &lt;div className="timer-buttons">
-            { showPlay &amp;&amp;
-                &lt;IconButton aria-label="start-button" onClick={handlePlay} >
-                    &lt;PlayIcon style={{ fontSize: '75px', color: '#015384'}} />
-                &lt;/IconButton>
-            }
-            { !showPlay &amp;&amp; 
-                &lt;span>
-                    &lt;IconButton aria-label="pause-button" onClick={handlePause} >
-                        &lt;PauseIcon style={{ fontSize: '75px', color: '#015384' }} />
-                    &lt;/IconButton>
-                    &lt;IconButton aria-label="cancel-button" onClick={handleCancel} >
-                        &lt;CancelIcon style={{ fontSize: '75px', color: '#015384' }} />
-                    &lt;/IconButton>
-                &lt;/span>
-            }
-        &lt;/div>
-    )
-}
+        
 
-// this is the fastforward button, don't need it for now.
-// { showForward &amp;&amp;
-//     &lt;IconButton aria-label="forward">
-//         &lt;FastForwardIcon style={{ fontSize: '75px', color: '#015384' }} onClick={this.alternateButtons} />
-//     &lt;/IconButton>
-// }
+    
 
-export default TimerButtons;</code></pre>
-        </article>
-    </section>
+    
+    <h4 class="name" id="DailyLogSession"><span class="type-signature"></span>new DailyLogSession<span class="signature">(timerSessions)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns information about a group of sequential TimerSessions in a specific day.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>timerSessions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="TimerSession.html">TimerSession</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A group of sequential TimerSessions that were all recorded in one day.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_Statistics_DailyLogSession.js.html">components/Statistics/DailyLogSession.js</a>, <a href="components_Statistics_DailyLogSession.js.html#line68">line 68</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">JSX.Element</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
