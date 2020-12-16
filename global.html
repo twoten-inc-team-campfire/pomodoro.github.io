@@ -98,13 +98,14 @@
 
         
             
-<h4 class="name" id="BlueCheckbox"><span class="type-signature">(constant) </span>BlueCheckbox<span class="type-signature"></span></h4>
+<h4 class="name" id="textSecondary"><span class="type-signature"></span>textSecondary<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    This is a custom Material UI checkbox that uses our color scheme.
+    The page that displays the UI components for settings and sends change
+events to the Global context.
 </div>
 
 
@@ -142,135 +143,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pages_Settings.js.html">pages/Settings.js</a>, <a href="pages_Settings.js.html#line42">line 42</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="BlueSwitch"><span class="type-signature">(constant) </span>BlueSwitch<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    This is a custom Material UI switch that uses our color scheme.
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pages_Settings.js.html">pages/Settings.js</a>, <a href="pages_Settings.js.html#line24">line 24</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="SettingsActions"><span class="type-signature">(constant) </span>SettingsActions<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    Object whose properties are used as predefined functions for updating
-the settings portion of the Global Context. The target parameter in each 
-action is used by the GlobalStateReducer as well as the settingsReducer to
-funnel the action to the appropriate reducer. The other properties of each 
-action are the data that the reducer utilizes to perform the transformation.
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GlobalState_SettingReducerandActions.js.html">GlobalState/SettingReducerandActions.js</a>, <a href="GlobalState_SettingReducerandActions.js.html#line11">line 11</a>
+        <a href="pages_Settings.js.html">pages/Settings.js</a>, <a href="pages_Settings.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -600,7 +473,7 @@ action are the data that the reducer utilizes to perform the transformation.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_DefaultDataService.js.html">services/DefaultDataService.js</a>, <a href="services_DefaultDataService.js.html#line72">line 72</a>
+        <a href="services_DefaultDataService.js.html">services/DefaultDataService.js</a>, <a href="services_DefaultDataService.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -906,7 +779,7 @@ circular clockface.
     
 
     
-    <h4 class="name" id="DateNavigator"><span class="type-signature"></span>DateNavigator<span class="signature">(date, onDateChange, maxDate)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="DateNavigator"><span class="type-signature"></span>DateNavigator<span class="signature">(date, onDateChange, maxDate<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -938,6 +811,8 @@ circular clockface.
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -963,6 +838,14 @@ circular clockface.
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -986,6 +869,14 @@ circular clockface.
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1008,6 +899,16 @@ circular clockface.
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2667,7 +2568,7 @@ getDateHour(date);</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_DefaultDataService.js.html">services/DefaultDataService.js</a>, <a href="services_DefaultDataService.js.html#line62">line 62</a>
+        <a href="services_DefaultDataService.js.html">services/DefaultDataService.js</a>, <a href="services_DefaultDataService.js.html#line57">line 57</a>
     </li></ul></dd>
     
 
@@ -3568,277 +3469,6 @@ getDateHour(date);</code></pre>
     
 
     
-    <h4 class="name" id="Settings"><span class="type-signature"></span>Settings<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    The page that displays the UI components for the User settings 
-and relays user requests to the Global context for other components 
-to use.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pages_Settings.js.html">pages/Settings.js</a>, <a href="pages_Settings.js.html#line58">line 58</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="settingsReducer"><span class="type-signature"></span>settingsReducer<span class="signature">(state, action)</span><span class="type-signature"> &rarr; {<a href="UserSettings.html">UserSettings</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Within the Global Context State is the subcontext of Settings. This settings
-reducer is responsible for transforming the settings portion of global context.
-It takes the current state of settings and an action to transform the state.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>state</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="UserSettings.html">UserSettings</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The current state of the settings (like above, it contains the min and sec)</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>action</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#SettingsActions">SettingsActions</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The action specifies how the state should be 
-transformed and provides the necessary data to do so.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GlobalState_SettingReducerandActions.js.html">GlobalState/SettingReducerandActions.js</a>, <a href="GlobalState_SettingReducerandActions.js.html#line35">line 35</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="UserSettings.html">UserSettings</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
     <h4 class="name" id="TaskSelector"><span class="type-signature"></span>TaskSelector<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
@@ -4122,13 +3752,13 @@ session.
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DailyLog.html">DailyLog</a></li><li><a href="DailyLogLongRestItems.html">DailyLogLongRestItems</a></li><li><a href="DailyLogPomodoroItems.html">DailyLogPomodoroItems</a></li><li><a href="DailyLogSession.html">DailyLogSession</a></li><li><a href="DailyLogShortRestItems.html">DailyLogShortRestItems</a></li><li><a href="PomodoroManager.html">PomodoroManager</a></li><li><a href="TimelineGraph.html">TimelineGraph</a></li><li><a href="TimerSession.html">TimerSession</a></li><li><a href="UserSettings.html">UserSettings</a></li></ul><h3>Interfaces</h3><ul><li><a href="TimerInterface.html">TimerInterface</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BlueCheckbox">BlueCheckbox</a></li><li><a href="global.html#BlueSwitch">BlueSwitch</a></li><li><a href="global.html#breakTimerSessionsIntoSeparateBlocks">breakTimerSessionsIntoSeparateBlocks</a></li><li><a href="global.html#clearAllHistory">clearAllHistory</a></li><li><a href="global.html#clearHistoryWithStore">clearHistoryWithStore</a></li><li><a href="global.html#ClockFace">ClockFace</a></li><li><a href="global.html#DateNavigator">DateNavigator</a></li><li><a href="global.html#dateToHtmlDateString">dateToHtmlDateString</a></li><li><a href="global.html#fitTimerSessionsIntoRange">fitTimerSessionsIntoRange</a></li><li><a href="global.html#getDailyLogSessionItems">getDailyLogSessionItems</a></li><li><a href="global.html#getDateHours">getDateHours</a></li><li><a href="global.html#getDateMinutes">getDateMinutes</a></li><li><a href="global.html#htmlDateStringToDate">htmlDateStringToDate</a></li><li><a href="global.html#loadTimerSessionListByDate">loadTimerSessionListByDate</a></li><li><a href="global.html#loadTimerSessionListByDateWithStore">loadTimerSessionListByDateWithStore</a></li><li><a href="global.html#loadUserSettings">loadUserSettings</a></li><li><a href="global.html#loadUserSettingsWithStore">loadUserSettingsWithStore</a></li><li><a href="global.html#saveTimerSession">saveTimerSession</a></li><li><a href="global.html#saveTimerSessionWithStore">saveTimerSessionWithStore</a></li><li><a href="global.html#saveUserSettings">saveUserSettings</a></li><li><a href="global.html#saveUserSettingsWithStore">saveUserSettingsWithStore</a></li><li><a href="global.html#Settings">Settings</a></li><li><a href="global.html#SettingsActions">SettingsActions</a></li><li><a href="global.html#settingsReducer">settingsReducer</a></li><li><a href="global.html#TaskSelector">TaskSelector</a></li><li><a href="global.html#Timer">Timer</a></li><li><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></li><li><a href="global.html#TimerButtons">TimerButtons</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DailyLog.html">DailyLog</a></li><li><a href="DailyLogLongRestItems.html">DailyLogLongRestItems</a></li><li><a href="DailyLogPomodoroItems.html">DailyLogPomodoroItems</a></li><li><a href="DailyLogSession.html">DailyLogSession</a></li><li><a href="DailyLogShortRestItems.html">DailyLogShortRestItems</a></li><li><a href="PomodoroManager.html">PomodoroManager</a></li><li><a href="PomodoroSettings.html">PomodoroSettings</a></li><li><a href="TimelineGraph.html">TimelineGraph</a></li><li><a href="TimerSession.html">TimerSession</a></li><li><a href="UISettings.html">UISettings</a></li><li><a href="UserSettings.html">UserSettings</a></li></ul><h3>Interfaces</h3><ul><li><a href="TimerInterface.html">TimerInterface</a></li></ul><h3>Global</h3><ul><li><a href="global.html#breakTimerSessionsIntoSeparateBlocks">breakTimerSessionsIntoSeparateBlocks</a></li><li><a href="global.html#clearAllHistory">clearAllHistory</a></li><li><a href="global.html#clearHistoryWithStore">clearHistoryWithStore</a></li><li><a href="global.html#ClockFace">ClockFace</a></li><li><a href="global.html#DateNavigator">DateNavigator</a></li><li><a href="global.html#dateToHtmlDateString">dateToHtmlDateString</a></li><li><a href="global.html#fitTimerSessionsIntoRange">fitTimerSessionsIntoRange</a></li><li><a href="global.html#getDailyLogSessionItems">getDailyLogSessionItems</a></li><li><a href="global.html#getDateHours">getDateHours</a></li><li><a href="global.html#getDateMinutes">getDateMinutes</a></li><li><a href="global.html#htmlDateStringToDate">htmlDateStringToDate</a></li><li><a href="global.html#loadTimerSessionListByDate">loadTimerSessionListByDate</a></li><li><a href="global.html#loadTimerSessionListByDateWithStore">loadTimerSessionListByDateWithStore</a></li><li><a href="global.html#loadUserSettings">loadUserSettings</a></li><li><a href="global.html#loadUserSettingsWithStore">loadUserSettingsWithStore</a></li><li><a href="global.html#saveTimerSession">saveTimerSession</a></li><li><a href="global.html#saveTimerSessionWithStore">saveTimerSessionWithStore</a></li><li><a href="global.html#saveUserSettings">saveUserSettings</a></li><li><a href="global.html#saveUserSettingsWithStore">saveUserSettingsWithStore</a></li><li><a href="global.html#TaskSelector">TaskSelector</a></li><li><a href="global.html#textSecondary">textSecondary</a></li><li><a href="global.html#Timer">Timer</a></li><li><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></li><li><a href="global.html#TimerButtons">TimerButtons</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Dec 15 2020 23:47:26 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Dec 16 2020 01:30:28 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>

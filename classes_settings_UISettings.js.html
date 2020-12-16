@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: utils/StatisticsPageUtil.js</title>
+    <title>JSDoc: Source: classes/settings/UISettings.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: utils/StatisticsPageUtil.js</h1>
+    <h1 class="page-title">Source: classes/settings/UISettings.js</h1>
 
     
 
@@ -27,40 +27,75 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * fitTimerSessionsInRange
- * @desc Takes a list of TimerSessions and strips it down to only TimerSessions that fit within the range,
- *  splitting
- * @param {TimerSession[]} timerSessions - A list of non-overlapping TimerSessions sorted by startTime
- * @param {Date} startDate - The earliest allowed date/time in the range
- * @param {Date} endDate - The latest allowed date/time in the range
- * @returns {TimerSession[]}
+ * UISettings
+ * @desc Contains settings pertaining to the appearance of the app.
  */
-export function fitTimerSessionsIntoRange(timerSessions, startDate, endDate) {
-    let trimmedTimerSessions = [];
-    let i = 0
-    while (i &lt; timerSessions.length &amp;&amp; timerSessions[i].endTime &lt; startDate) {
-        i += 1
+export class UISettings {
+
+    /**
+     * Create a new UISettings object.
+     * @constructs
+     * @param {boolean} displayPauseButton - Whether to display the pause button on the home screen.
+     * @param {boolean} displayCancelButton - Whether to display the cancel button on the home screen.
+     * @param {boolean} displayFastForwardButton - Whether to display the fast forward button on the home screen.
+     * @param {boolean} displayTaskSelector - Whether to display the task selector field on the home screen.
+     */
+    constructor(displayPauseButton = true,
+        displayCancelButton = true,
+        displayFastForwardButton = true,
+        displayTaskSelector = true) {
+        if (!this.isValidConstructorInput(
+            displayPauseButton,
+            displayCancelButton,
+            displayFastForwardButton,
+            displayTaskSelector
+        )) {
+            throw new Error('Invalid constructor of UISettings');
+        }
+
+        /**
+         * @member {boolean} UISettings#displayPauseButton
+         * @desc Whether to display the pause button on the home screen.
+         */
+        this.displayPauseButton = displayPauseButton
+        /**
+         * @member {boolean} UISettings#displayCancelButton
+         * @desc Whether to display the cancel button on the home screen.
+         */
+        this.displayCancelButton = displayCancelButton
+        /**
+         * @member {boolean} UISettings#displayFastForwardButton
+         * @desc Whether to display the fast forward button on the home screen.
+         */
+        this.displayFastForwardButton = displayFastForwardButton
+        /**
+         * @member {boolean} UISettings#displayTaskSelector
+         * @desc Whether to display the task selector field on the home screen.
+         */
+        this.displayTaskSelector = displayTaskSelector
     }
-    if (i === timerSessions.length) {
-        return [];
-    } else if (timerSessions[i].startTime &lt; startDate) {
-        let trimmedSession = timerSessions[i].copy();
-        trimmedSession.startTime = new Date(startDate);
-        trimmedTimerSessions.push(trimmedSession);
-    } else {
-        trimmedTimerSessions.push(timerSessions[i]);
+
+    /**
+     * isValidConstructorInput
+     * @desc Verify if the constructor inputs are in proper types
+     * @param {boolean} displayPauseButton - Whether to display the pause button on the home screen.
+     * @param {boolean} displayCancelButton - Whether to display the cancel button on the home screen.
+     * @param {boolean} displayFastForwardButton - Whether to display the fast forward button on the home screen.
+     * @param {boolean} displayTaskSelector - Whether to display the task selector field on the home screen.
+     * @returns {boolean} true if the inputs are in proper types, otherwise false
+     * @private
+     */
+    isValidConstructorInput(
+        displayPauseButton,
+        displayCancelButton,
+        displayFastForwardButton,
+        displayTaskSelector
+    ) {
+        return typeof displayPauseButton == 'boolean'
+            &amp;&amp; typeof displayCancelButton == 'boolean'
+            &amp;&amp; typeof displayFastForwardButton == 'boolean'
+            &amp;&amp; typeof displayTaskSelector == 'boolean'
     }
-    i += 1
-    while (i &lt; timerSessions.length &amp;&amp; timerSessions[i].startTime &lt; endDate) {
-        trimmedTimerSessions.push(timerSessions[i]);
-        i += 1;
-    }
-    if (trimmedTimerSessions[trimmedTimerSessions.length - 1].endTime > endDate) {
-        let trimmedSession = trimmedTimerSessions[trimmedTimerSessions.length - 1].copy();
-        trimmedSession.endTime = new Date(endDate);
-        trimmedTimerSessions[trimmedTimerSessions.length - 1] = trimmedSession;
-    }
-    return trimmedTimerSessions;
 }</code></pre>
         </article>
     </section>
