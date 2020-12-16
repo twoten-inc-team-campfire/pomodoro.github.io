@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>UserSettings<span class="signature">(pomodoro, ui)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>UserSettings<span class="signature">(pomodoroLength, shortBreakLength, longBreakLength, numPomodorosInCycle, autoStartBreaks, autoStartPomodoros, displayPauseButton, displayCancelButton, displayFastForwardButton, displayTaskSelector)</span><span class="type-signature"></span></h2>
         
             <div class="class-description">UserSettings</div>
         
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="UserSettings"><span class="type-signature"></span>new UserSettings<span class="signature">(pomodoro, ui)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="UserSettings"><span class="type-signature"></span>new UserSettings<span class="signature">(pomodoroLength, shortBreakLength, longBreakLength, numPomodorosInCycle, autoStartBreaks, autoStartPomodoros, displayPauseButton, displayCancelButton, displayFastForwardButton, displayTaskSelector)</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,8 @@
 
 
 <div class="description">
-    Create a UserSettings object.
+    Create a new UserSettings object using the default values established in
+the configuration file.
 </div>
 
 
@@ -79,6 +80,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -89,13 +92,13 @@
 
         <tr>
             
-                <td class="name"><code>pomodoro</code></td>
+                <td class="name"><code>pomodoroLength</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="PomodoroSettings.html">PomodoroSettings</a></span>
+<span class="param-type">number</span>
 
 
             
@@ -104,21 +107,27 @@
             
 
             
+                <td class="default">
+                
+                    25
+                
+                </td>
+            
 
-            <td class="description last">The settings for the pomodoro timer</td>
+            <td class="description last">Length of the pomodoro cycle in whole minutes.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>ui</code></td>
+                <td class="name"><code>shortBreakLength</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="UISettings.html">UISettings</a></span>
+<span class="param-type">number</span>
 
 
             
@@ -127,8 +136,246 @@
             
 
             
+                <td class="default">
+                
+                    5
+                
+                </td>
+            
 
-            <td class="description last">The settings for the UI</td>
+            <td class="description last">Length of the short break in whole minutes.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>longBreakLength</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    20
+                
+                </td>
+            
+
+            <td class="description last">Length of the long break in whole minutes.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>numPomodorosInCycle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    4
+                
+                </td>
+            
+
+            <td class="description last">The number of pomodoros in a complete cycle (before a long break)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>autoStartBreaks</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">Start breaks without user input immediately after finishing a pomodoro</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>autoStartPomodoros</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">Start pomodoros without user input immediately after finishing a break.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>displayPauseButton</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">Whether to display the pause button on the home screen.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>displayCancelButton</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">Whether to display the cancel button on the home screen.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>displayFastForwardButton</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">Whether to display the fast forward button on the home screen.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>displayTaskSelector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">Whether to display the task selector field on the home screen.</td>
         </tr>
 
     
@@ -169,7 +416,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line15">line 15</a>
+        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -219,13 +466,13 @@
 
         
             
-<h4 class="name" id="pomodoro"><span class="type-signature"></span>pomodoro<span class="type-signature"> :<a href="PomodoroSettings.html">PomodoroSettings</a></span></h4>
+<h4 class="name" id="autoStartBreaks"><span class="type-signature"></span>autoStartBreaks<span class="type-signature"> :boolean</span></h4>
 
 
 
 
 <div class="description">
-    The settings for the pomodoro timer
+    Start breaks without user input immediately after finishing a pomodoro.
 </div>
 
 
@@ -234,7 +481,7 @@
     <ul>
         <li>
             
-<span class="param-type"><a href="PomodoroSettings.html">PomodoroSettings</a></span>
+<span class="param-type">boolean</span>
 
 
         </li>
@@ -273,7 +520,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line16">line 16</a>
+        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -291,13 +538,13 @@
 
         
             
-<h4 class="name" id="ui"><span class="type-signature"></span>ui<span class="type-signature"> :<a href="UISettings.html">UISettings</a></span></h4>
+<h4 class="name" id="autoStartPomodoros"><span class="type-signature"></span>autoStartPomodoros<span class="type-signature"> :boolean</span></h4>
 
 
 
 
 <div class="description">
-    The settings for the UI
+    Start pomodoros without user input immediately after finishing a break.
 </div>
 
 
@@ -306,7 +553,7 @@
     <ul>
         <li>
             
-<span class="param-type"><a href="UISettings.html">UISettings</a></span>
+<span class="param-type">boolean</span>
 
 
         </li>
@@ -345,7 +592,583 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line21">line 21</a>
+        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line74">line 74</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="displayCancelButton"><span class="type-signature"></span>displayCancelButton<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+<div class="description">
+    Whether to display the cancel button on the home screen.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line84">line 84</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="displayFastForwardButton"><span class="type-signature"></span>displayFastForwardButton<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+<div class="description">
+    Whether to display the fast forward button on the home screen.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line89">line 89</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="displayPauseButton"><span class="type-signature"></span>displayPauseButton<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+<div class="description">
+    Whether to display the pause button on the home screen.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line79">line 79</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="displayTaskSelector"><span class="type-signature"></span>displayTaskSelector<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+<div class="description">
+    Whether to display the task selector field on the home screen.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line94">line 94</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="longBreakLength"><span class="type-signature"></span>longBreakLength<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Length of the long break in milliseconds.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line59">line 59</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="numPomodorosInCycle"><span class="type-signature"></span>numPomodorosInCycle<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    The number of pomodoros in a complete cycle (before a long break)
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line64">line 64</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="pomodoroLength"><span class="type-signature"></span>pomodoroLength<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Length of the pomodoro cycle in milliseconds.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="shortBreakLength"><span class="type-signature"></span>shortBreakLength<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Length of the short break in milliseconds.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="classes_settings_UserSettings.js.html">classes/settings/UserSettings.js</a>, <a href="classes_settings_UserSettings.js.html#line54">line 54</a>
     </li></ul></dd>
     
 
@@ -379,13 +1202,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DailyLog.html">DailyLog</a></li><li><a href="DailyLogLongRestItems.html">DailyLogLongRestItems</a></li><li><a href="DailyLogPomodoroItems.html">DailyLogPomodoroItems</a></li><li><a href="DailyLogSession.html">DailyLogSession</a></li><li><a href="DailyLogShortRestItems.html">DailyLogShortRestItems</a></li><li><a href="PomodoroManager.html">PomodoroManager</a></li><li><a href="PomodoroSettings.html">PomodoroSettings</a></li><li><a href="TimelineGraph.html">TimelineGraph</a></li><li><a href="TimerSession.html">TimerSession</a></li><li><a href="UISettings.html">UISettings</a></li><li><a href="UserSettings.html">UserSettings</a></li></ul><h3>Interfaces</h3><ul><li><a href="TimerInterface.html">TimerInterface</a></li></ul><h3>Global</h3><ul><li><a href="global.html#breakTimerSessionsIntoSeparateBlocks">breakTimerSessionsIntoSeparateBlocks</a></li><li><a href="global.html#clearAllHistory">clearAllHistory</a></li><li><a href="global.html#clearHistoryWithStore">clearHistoryWithStore</a></li><li><a href="global.html#ClockFace">ClockFace</a></li><li><a href="global.html#DateNavigator">DateNavigator</a></li><li><a href="global.html#dateToHtmlDateString">dateToHtmlDateString</a></li><li><a href="global.html#fitTimerSessionsIntoRange">fitTimerSessionsIntoRange</a></li><li><a href="global.html#getDailyLogSessionItems">getDailyLogSessionItems</a></li><li><a href="global.html#getDateHours">getDateHours</a></li><li><a href="global.html#getDateMinutes">getDateMinutes</a></li><li><a href="global.html#htmlDateStringToDate">htmlDateStringToDate</a></li><li><a href="global.html#loadTimerSessionListByDate">loadTimerSessionListByDate</a></li><li><a href="global.html#loadTimerSessionListByDateWithStore">loadTimerSessionListByDateWithStore</a></li><li><a href="global.html#loadUserSettings">loadUserSettings</a></li><li><a href="global.html#loadUserSettingsWithStore">loadUserSettingsWithStore</a></li><li><a href="global.html#saveTimerSession">saveTimerSession</a></li><li><a href="global.html#saveTimerSessionWithStore">saveTimerSessionWithStore</a></li><li><a href="global.html#saveUserSettings">saveUserSettings</a></li><li><a href="global.html#saveUserSettingsWithStore">saveUserSettingsWithStore</a></li><li><a href="global.html#TaskSelector">TaskSelector</a></li><li><a href="global.html#textSecondary">textSecondary</a></li><li><a href="global.html#Timer">Timer</a></li><li><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></li><li><a href="global.html#TimerButtons">TimerButtons</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DailyLog.html">DailyLog</a></li><li><a href="DailyLogLongRestItems.html">DailyLogLongRestItems</a></li><li><a href="DailyLogPomodoroItems.html">DailyLogPomodoroItems</a></li><li><a href="DailyLogSession.html">DailyLogSession</a></li><li><a href="DailyLogShortRestItems.html">DailyLogShortRestItems</a></li><li><a href="PomodoroManager.html">PomodoroManager</a></li><li><a href="TimelineGraph.html">TimelineGraph</a></li><li><a href="TimerSession.html">TimerSession</a></li><li><a href="UserSettings.html">UserSettings</a></li></ul><h3>Interfaces</h3><ul><li><a href="TimerInterface.html">TimerInterface</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BlueCheckbox">BlueCheckbox</a></li><li><a href="global.html#BlueSwitch">BlueSwitch</a></li><li><a href="global.html#breakTimerSessionsIntoSeparateBlocks">breakTimerSessionsIntoSeparateBlocks</a></li><li><a href="global.html#clearAllHistory">clearAllHistory</a></li><li><a href="global.html#clearHistoryWithStore">clearHistoryWithStore</a></li><li><a href="global.html#ClockFace">ClockFace</a></li><li><a href="global.html#DateNavigator">DateNavigator</a></li><li><a href="global.html#dateToHtmlDateString">dateToHtmlDateString</a></li><li><a href="global.html#fitTimerSessionsIntoRange">fitTimerSessionsIntoRange</a></li><li><a href="global.html#getDailyLogSessionItems">getDailyLogSessionItems</a></li><li><a href="global.html#getDateHours">getDateHours</a></li><li><a href="global.html#getDateMinutes">getDateMinutes</a></li><li><a href="global.html#htmlDateStringToDate">htmlDateStringToDate</a></li><li><a href="global.html#loadTimerSessionListByDate">loadTimerSessionListByDate</a></li><li><a href="global.html#loadTimerSessionListByDateWithStore">loadTimerSessionListByDateWithStore</a></li><li><a href="global.html#loadUserSettings">loadUserSettings</a></li><li><a href="global.html#loadUserSettingsWithStore">loadUserSettingsWithStore</a></li><li><a href="global.html#saveTimerSession">saveTimerSession</a></li><li><a href="global.html#saveTimerSessionWithStore">saveTimerSessionWithStore</a></li><li><a href="global.html#saveUserSettings">saveUserSettings</a></li><li><a href="global.html#saveUserSettingsWithStore">saveUserSettingsWithStore</a></li><li><a href="global.html#Settings">Settings</a></li><li><a href="global.html#SettingsActions">SettingsActions</a></li><li><a href="global.html#settingsReducer">settingsReducer</a></li><li><a href="global.html#TaskSelector">TaskSelector</a></li><li><a href="global.html#Timer">Timer</a></li><li><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></li><li><a href="global.html#TimerButtons">TimerButtons</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Dec 16 2020 01:30:29 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Dec 16 2020 01:32:33 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
