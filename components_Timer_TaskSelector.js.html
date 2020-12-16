@@ -37,24 +37,34 @@ import IconButton from '@material-ui/core/IconButton';
 import CreateIcon from '@material-ui/icons/Create';
 import CloseIcon from '@material-ui/icons/Close';
 
-
+/**
+ * Callback to pass the newly selected task to the parent.
+ * @callback onTaskChange
+ * @param {string} task - The new task being passed to the parent
+ * @memberOf TaskSelector
+ */
 /**
  * TaskSelector
  * @desc Component that allows users to enter a task for the current
  * pomodoro session.
  */
-function TaskSelector() {
+function TaskSelector({onTaskChange}) {
     const [showSelector, setShowSelector] = useState(true);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [task, setTask] = useState(null);
+
+    const setTaskState = (task) => {
+        onTaskChange(task);
+        setTask(task);
+    }
 
     /**
      * handleToggle
      * @desc Hides the selector and opens the dialog.
      */
     const handleToggle = () => {
-        setShowSelector(!showSelector)
-        setIsDialogOpen(!isDialogOpen)
+        setShowSelector(!showSelector);
+        setIsDialogOpen(!isDialogOpen);
     }
 
     /**
@@ -62,7 +72,7 @@ function TaskSelector() {
      * @desc Sets the task to the input provided by the user.
      */
     const handleChange = (event) => {
-        setTask(event.target.value)
+        setTaskState(event.target.value);
     }
 
     /**
@@ -70,7 +80,7 @@ function TaskSelector() {
      * @desc Closes the dialog.
      */
     const handleSubmit = () => {
-        setIsDialogOpen(!isDialogOpen)
+        setIsDialogOpen(!isDialogOpen);
     }
 
     /**
@@ -79,8 +89,8 @@ function TaskSelector() {
      * to null.
      */
     const handleCancel = () => {
-        handleToggle()
-        setTask(null)
+        handleToggle();
+        setTaskState(null);
     }
 
     /**
@@ -88,8 +98,8 @@ function TaskSelector() {
      * @desc Shows the selector and sets the task to null.
      */
     const handleClearTask = () => {
-        setShowSelector(!showSelector)
-        setTask(null)
+        setShowSelector(!showSelector);
+        setTaskState(null);
     }
   
     return ( 
@@ -139,8 +149,7 @@ function TaskSelector() {
     )
 }
   
-export default TaskSelector;
-</code></pre>
+export default TaskSelector;</code></pre>
         </article>
     </section>
 
@@ -150,13 +159,13 @@ export default TaskSelector;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DailyLog.html">DailyLog</a></li><li><a href="DailyLogLongRestItems.html">DailyLogLongRestItems</a></li><li><a href="DailyLogPomodoroItems.html">DailyLogPomodoroItems</a></li><li><a href="DailyLogSession.html">DailyLogSession</a></li><li><a href="DailyLogShortRestItems.html">DailyLogShortRestItems</a></li><li><a href="PomodoroManager.html">PomodoroManager</a></li><li><a href="TimelineGraph.html">TimelineGraph</a></li><li><a href="TimerSession.html">TimerSession</a></li><li><a href="UserSettings.html">UserSettings</a></li></ul><h3>Interfaces</h3><ul><li><a href="TimerInterface.html">TimerInterface</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BlueCheckbox">BlueCheckbox</a></li><li><a href="global.html#BlueSwitch">BlueSwitch</a></li><li><a href="global.html#breakTimerSessionsIntoSeparateBlocks">breakTimerSessionsIntoSeparateBlocks</a></li><li><a href="global.html#clearAllHistory">clearAllHistory</a></li><li><a href="global.html#clearHistoryWithStore">clearHistoryWithStore</a></li><li><a href="global.html#ClockFace">ClockFace</a></li><li><a href="global.html#DateNavigator">DateNavigator</a></li><li><a href="global.html#dateToHtmlDateString">dateToHtmlDateString</a></li><li><a href="global.html#fitTimerSessionsIntoRange">fitTimerSessionsIntoRange</a></li><li><a href="global.html#getDailyLogSessionItems">getDailyLogSessionItems</a></li><li><a href="global.html#getDateHours">getDateHours</a></li><li><a href="global.html#getDateMinutes">getDateMinutes</a></li><li><a href="global.html#htmlDateStringToDate">htmlDateStringToDate</a></li><li><a href="global.html#loadTimerSessionListByDate">loadTimerSessionListByDate</a></li><li><a href="global.html#loadTimerSessionListByDateWithStore">loadTimerSessionListByDateWithStore</a></li><li><a href="global.html#loadUserSettings">loadUserSettings</a></li><li><a href="global.html#loadUserSettingsWithStore">loadUserSettingsWithStore</a></li><li><a href="global.html#saveTimerSession">saveTimerSession</a></li><li><a href="global.html#saveTimerSessionWithStore">saveTimerSessionWithStore</a></li><li><a href="global.html#saveUserSettings">saveUserSettings</a></li><li><a href="global.html#saveUserSettingsWithStore">saveUserSettingsWithStore</a></li><li><a href="global.html#Settings">Settings</a></li><li><a href="global.html#SettingsActions">SettingsActions</a></li><li><a href="global.html#settingsReducer">settingsReducer</a></li><li><a href="global.html#TaskSelector">TaskSelector</a></li><li><a href="global.html#Timer">Timer</a></li><li><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></li><li><a href="global.html#TimerButtons">TimerButtons</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DailyLog.html">DailyLog</a></li><li><a href="DailyLogLongRestItems.html">DailyLogLongRestItems</a></li><li><a href="DailyLogPomodoroItems.html">DailyLogPomodoroItems</a></li><li><a href="DailyLogSession.html">DailyLogSession</a></li><li><a href="DailyLogShortRestItems.html">DailyLogShortRestItems</a></li><li><a href="TimelineGraph.html">TimelineGraph</a></li><li><a href="TimerSession.html">TimerSession</a></li><li><a href="UserSettings.html">UserSettings</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BlueCheckbox">BlueCheckbox</a></li><li><a href="global.html#BlueSwitch">BlueSwitch</a></li><li><a href="global.html#breakTimerSessionsIntoSeparateBlocks">breakTimerSessionsIntoSeparateBlocks</a></li><li><a href="global.html#clearAllHistory">clearAllHistory</a></li><li><a href="global.html#clearHistoryWithStore">clearHistoryWithStore</a></li><li><a href="global.html#ClockFace">ClockFace</a></li><li><a href="global.html#DateNavigator">DateNavigator</a></li><li><a href="global.html#dateToHtmlDateString">dateToHtmlDateString</a></li><li><a href="global.html#fitTimerSessionsIntoRange">fitTimerSessionsIntoRange</a></li><li><a href="global.html#getDailyLogSessionItems">getDailyLogSessionItems</a></li><li><a href="global.html#getDateHours">getDateHours</a></li><li><a href="global.html#getDateMinutes">getDateMinutes</a></li><li><a href="global.html#htmlDateStringToDate">htmlDateStringToDate</a></li><li><a href="global.html#loadTimerSessionListByDate">loadTimerSessionListByDate</a></li><li><a href="global.html#loadTimerSessionListByDateWithStore">loadTimerSessionListByDateWithStore</a></li><li><a href="global.html#loadUserSettings">loadUserSettings</a></li><li><a href="global.html#loadUserSettingsWithStore">loadUserSettingsWithStore</a></li><li><a href="global.html#PomodoroManager">PomodoroManager</a></li><li><a href="global.html#saveTimerSession">saveTimerSession</a></li><li><a href="global.html#saveTimerSessionWithStore">saveTimerSessionWithStore</a></li><li><a href="global.html#saveUserSettings">saveUserSettings</a></li><li><a href="global.html#saveUserSettingsWithStore">saveUserSettingsWithStore</a></li><li><a href="global.html#Settings">Settings</a></li><li><a href="global.html#SettingsActions">SettingsActions</a></li><li><a href="global.html#settingsReducer">settingsReducer</a></li><li><a href="global.html#TaskSelector">TaskSelector</a></li><li><a href="global.html#Timer">Timer</a></li><li><a href="global.html#TIMER_SESSION_TYPE">TIMER_SESSION_TYPE</a></li><li><a href="global.html#TimerButtons">TimerButtons</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Dec 16 2020 01:33:47 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Dec 16 2020 08:39:57 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
